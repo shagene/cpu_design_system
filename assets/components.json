@@ -1,0 +1,44 @@
+{
+    "Components": [
+        {
+            "navigationLink": "App bars: bottom",
+            "platforms": "ResponsiveWeb=No\r\nMobileApp=Yes",
+            "pageName": "AppBars-Bottom",
+            "componentHeading": "App bars: bottom",
+            "componentDescription": "A bottom app bar displays navigation and key actions at the bottom of mobile screens.",
+            "usage": "Bottom app bars provide access to a bottom navigation drawer and up to four actions, including the floating action button.\r\n\r\nWhen to use\r\nBottom app bars should be used for:\r\n- Mobile devices only\r\n- Access to a bottom navigation drawer\r\n- Screens with two to five actions\r\n\r\nBottom app bars shouldn't be used for:\r\n- Apps with a bottom navigation bar\r\n- Screens with one or no actions",
+            "materialDesignLink": "https://material.io/components/app-bars-bottom",
+            "flutterLinkLink": "https://material.io/components/app-bars-bottom/flutterLink#using-the-bottom-app-bar\r\n\r\nhttps://api.flutterLink.dev/flutterLink/material/BottomNavigationBar-class.html"
+        },
+        {
+            "navigationLink": "App bars: top",
+            "platforms": "ResponsiveWeb=Yes\r\nMobileApp=Yes",
+            "pageName": "AppBars-Top",
+            "componentHeading": "App bars: top",
+            "componentDescription": "The top app bar displays information and actions relating to the current screen.",
+            "usage": "The top app bar provides content and actions related to the current screen. It’s used for branding, screen titles, navigation, and actions.",
+            "materialDesignLink": "https://material.io/components/app-bars-top",
+            "flutterLink": "https://material.io/components/app-bars-top/flutterLink#using-the-top-app-bar\r\n\r\nhttps://api.flutterLink.dev/flutterLink/material/AppBar-class.html"
+        },
+        {
+            "navigationLink": "Backdrop",
+            "platforms": "ResponsiveWeb=No\r\nMobileApp=Yes",
+            "pageName": "Backdrop",
+            "componentHeading": "Backdrop",
+            "componentDescription": "A backdrop appears behind all other surfaces in an app, displaying contextual and actionable content.",
+            "usage": "A backdrop is composed of two surfaces: a back layer and a front layer. The back layer displays actions and context, and these control and inform the front layer's content.",
+            "materialDesignLink": "https://material.io/components/backdrop",
+            "flutterLink": "https://material.io/components/app-bars-top/flutterLink#using-the-top-app-bar\r\n\r\nhttps://api.flutterLink.dev/flutterLink/material/AppBar-class.html"
+        },
+        {
+            "navigationLink": "Banners",
+            "platforms": "ResponsiveWeb=Yes\r\nMobileApp=Yes",
+            "pageName": "Banners",
+            "componentHeading": "Banners",
+            "componentDescription": "A banner displays a prominent message and related optional actions.",
+            "usage": "A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). It requires a user action to be dismissed.\r\n\r\nBanners should be displayed at the top of the screen, below a top app bar. They’re persistent and nonmodal, allowing the user to either ignore them or interact with them at any time. Only one banner should be shown at a time.",
+            "materialDesignLink": "Banners - materialDesignLink",
+            "flutterLink": "https://material.io/components/banners/flutterLink#using-banners"
+        }
+    ]
+  }

@@ -1,0 +1,21 @@
+{
+    "Navigation": [
+      {
+        "navOrder": "1",
+        "categoryNavLink": "Home",
+        "matIcon": "home"
+      },
+      {
+        "navOrder": "2",
+        "categoryNavLink": "Navigation",
+        "matIcon": "history_edu"
+      },
+      {
+        "navOrder": "3",
+        "categoryNavLink": "Components",
+        "matIcon": "book"
+      }
+    ]
+  }
+
+  

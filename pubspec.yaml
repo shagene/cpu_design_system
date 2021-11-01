@@ -1,0 +1,33 @@
+name: cpu_design_system
+description: Computershare Design System Application
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^1.0.0-dev.11
+  riverpod: ^1.0.0-dev.10
+  cupertino_icons: ^1.0.3
+  dio: ^4.0.0
+  equatable: ^2.0.3
+  flutter_svg: ^0.22.0
+  rxdart: ^0.27.2
+  state_notifier: ^0.7.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/
+    - assets/navigation.json
+    - assets/components.json
