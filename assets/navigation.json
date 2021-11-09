@@ -1,5 +1,4 @@
-{
-    "Navigation": [
+[
       {
         "navOrder": "1",
         "categoryNavLink": "Home",
@@ -16,6 +15,3 @@
         "matIcon": "book"
       }
     ]
-  }
-
-  

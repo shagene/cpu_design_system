@@ -1,13 +1,16 @@
 import 'package:cpu_design_system/core/environment_variables.dart';
+import 'package:cpu_design_system/features/guic/navigation_pane/nav_pane_entity.dart';
+import 'package:cpu_design_system/main.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final guicRepositoryProvider = Provider<GuicRepository>((ref) {
-  throw UnimplementedError();
+final listPaneRepositoryProvider = Provider<ListPaneRepository>((ref) {
+  final dio = ref.watch(navJsonProvider);
+  return ListPaneRepository(dio: dio);
 });
 
 abstract class GuicRepository {
-  Future<List> getData();
+  Future<List> getNavList();
 }
 
 class ListPaneRepository implements GuicRepository {
@@ -15,15 +18,19 @@ class ListPaneRepository implements GuicRepository {
   const ListPaneRepository({required this.dio});
 
   @override
-  Future<List> getData() async {
+  Future<List<NavPaneEntity>> getNavList() async {
     final response = await dio.get(
-      'genre/movie/list',
-      queryParameters: {
-        'api_key': api,
-        'language': 'en-US',
-      },
+      'navigation.json',
     );
-    final results = List<Map<String, dynamic>>.from(response.data['genres']);
-    return results;
+    print('response');
+    print(response.data);
+    print('set results');
+    final results =
+        List<Map<String, dynamic>>.from(response.data['Navigation']);
+    print('after results');
+    final navLists = results.map((e) => NavPaneEntity.fromMap(e)).toList();
+    print('navLists');
+    print(navLists);
+    return navLists;
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cpu_design_system/core/constants.dart';
+import 'package:cpu_design_system/features/guic/guic_controller.dart';
 import 'package:cpu_design_system/main.dart';
 import 'package:cpu_design_system/theme/pallette.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +11,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class NavigationPaneScreen extends ConsumerWidget {
   const NavigationPaneScreen({Key? key}) : super(key: key);
 
+  // Future fetchNavList() async {
+  //   final jsonString = await rootBundle.loadString('assets/navigation.json');
+  //   final json = jsonDecode(jsonString);
+  //   print(json);
+  //   return json;
+  // }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-
+    // fetchNavList();
     return Container(
       color: Palette.genoa50,
       child: Column(
@@ -29,31 +37,35 @@ class NavigationPaneScreen extends ConsumerWidget {
               ),
             ),
           ),
-          // Expanded(
-          //   child: ListView.separated(
-          //       padding: const EdgeInsets.symmetric(vertical: kListItemSpacing),
-          //       itemBuilder: (context, index) {
-          //         final navigationPaneList = ref
-          //             .watch(navigationPaneProvider)
-          //             .navigationPaneList[index];
-          //         return ListCard(
-          //           contentListIcon: navigationPaneList.matIcon,
-          //           contentListItem: navigationPaneList.categoryNavLink,
-          //           onTap: () => ref
-          //               .read(listPaneProvider.notifier)
-          //               .passData(navigationPaneList.categoryNavLink),
-          //         );
-          //       },
-          //       separatorBuilder: (context, index) {
-          //         return const SizedBox(
-          //           height: kListItemSpacing,
-          //         );
-          //       },
-          //       itemCount: ref
-          //           .watch(navigationPaneProvider)
-          //           .navigationPaneList
-          //           .length),
-          // ),
+          Expanded(
+            child: ref.watch(guicControllerProvider).navList.when(
+                  data: (navlists) {
+                    return ListView.separated(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: kListItemSpacing),
+                      itemBuilder: (context, index) {
+                        final navlist = navlists[index];
+                        return ListCard(
+                            contentListItem: navlist.categoryNavLink,
+                            contentListIcon: navlist.matIcon,
+                            onTap: () {});
+                      },
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(
+                          height: kListItemSpacing,
+                        );
+                      },
+                      itemCount: navlists.length,
+                    );
+                  },
+                  error: (e, s, onError) {
+                    return const Text('Something went wrong on our end');
+                  },
+                  loading: (onLoading) => const Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ),
+          ),
         ],
       ),
     );

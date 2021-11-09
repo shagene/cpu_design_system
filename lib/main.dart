@@ -20,7 +20,9 @@ Future<void> main() async {
 
 final navJsonProvider = Provider<Dio>((ref) {
   return Dio(
-    BaseOptions(baseUrl: 'https://api.themoviedb.org/3/'),
+    BaseOptions(
+        baseUrl:
+            'https://raw.githubusercontent.com/shagene/cpu_design_system/main/assets/'),
   );
 });
 
