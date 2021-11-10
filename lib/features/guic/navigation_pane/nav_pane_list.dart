@@ -8,7 +8,7 @@ import 'package:equatable/equatable.dart';
 class NavigationPaneList extends Equatable {
   final String navOrder;
   final String categoryNavLink;
-  final Icon matIcon;
+  final String matIcon;
 
   const NavigationPaneList({
     required this.navOrder,
@@ -26,7 +26,7 @@ class NavigationPaneList extends Equatable {
   const NavigationPaneList.initial()
       : navOrder = '',
         categoryNavLink = '',
-        matIcon = const Icon(Icons.flutter_dash);
+        matIcon = '';
 
   @override
   List<Object?> get props => [navOrder, categoryNavLink, matIcon];

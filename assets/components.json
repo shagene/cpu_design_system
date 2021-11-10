@@ -1,5 +1,4 @@
-{
-    "Components": [
+[
         {
             "navigationLink": "App bars: bottom",
             "platforms": "ResponsiveWeb=No\r\nMobileApp=Yes",
@@ -41,4 +40,3 @@
             "flutterLink": "https://material.io/components/banners/flutterLink#using-banners"
         }
     ]
-  }

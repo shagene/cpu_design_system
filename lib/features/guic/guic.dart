@@ -1,3 +1,4 @@
+import 'package:cpu_design_system/features/guic/list_pane/list_pane_screen.dart';
 import 'package:cpu_design_system/features/guic/navigation_pane/navigation_pane_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,11 +14,9 @@ class Guic extends ConsumerWidget {
           flex: 1,
           child: NavigationPaneScreen(),
         ),
-        Expanded(
+        const Expanded(
           flex: 2,
-          child: Container(
-            color: Colors.white,
-          ),
+          child: ListPaneScreen(),
         ),
         Expanded(
           flex: 6,

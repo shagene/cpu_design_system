@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class NavPaneEntity extends Equatable {
   final String navOrder;
   final String categoryNavLink;
-  final Icon matIcon;
+  final String matIcon;
 
   const NavPaneEntity({
     required this.navOrder,
@@ -14,7 +14,7 @@ class NavPaneEntity extends Equatable {
     required this.matIcon,
   });
 
-  factory NavPaneEntity.fromMap(Map<String, dynamic> map) {
+  factory NavPaneEntity.fromMap(Map<dynamic, dynamic> map) {
     return NavPaneEntity(
         navOrder: map['navOrder'],
         categoryNavLink: map['categoryNavLink'],

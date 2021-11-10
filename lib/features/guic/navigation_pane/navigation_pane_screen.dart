@@ -11,13 +11,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class NavigationPaneScreen extends ConsumerWidget {
   const NavigationPaneScreen({Key? key}) : super(key: key);
 
-  // Future fetchNavList() async {
-  //   final jsonString = await rootBundle.loadString('assets/navigation.json');
-  //   final json = jsonDecode(jsonString);
-  //   print(json);
-  //   return json;
-  // }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
@@ -31,7 +24,7 @@ class NavigationPaneScreen extends ConsumerWidget {
           ),
           Center(
             child: Text(
-              'Left',
+              'Navigation',
               style: theme.textTheme.headline6?.copyWith(
                 color: Palette.almostBlack,
               ),
@@ -48,7 +41,9 @@ class NavigationPaneScreen extends ConsumerWidget {
                         return ListCard(
                             contentListItem: navlist.categoryNavLink,
                             contentListIcon: navlist.matIcon,
-                            onTap: () {});
+                            onTap: () {
+                              // ref.read(movieFlowControllerProvider.notifier).toggleSelected(genre),
+                            });
                       },
                       separatorBuilder: (context, index) {
                         return const SizedBox(
@@ -81,7 +76,7 @@ class ListCard extends StatelessWidget {
   }) : super(key: key);
 
   final String contentListItem;
-  final Icon contentListIcon;
+  final String contentListIcon;
   final VoidCallback onTap;
 
   @override
@@ -105,8 +100,14 @@ class ListCard extends StatelessWidget {
                     color: Palette.almostBlack,
                   ),
                 ),
-                const Spacer(),
-                contentListIcon,
+                // const Spacer(),
+                // Text(
+                //   contentListIcon,
+                //   textAlign: TextAlign.center,
+                //   style: theme.textTheme.bodyText2?.copyWith(
+                //     color: Palette.almostBlack,
+                //   ),
+                // ),
               ],
             ),
           ),

@@ -12,23 +12,13 @@ Future<void> main() async {
   ));
 }
 
-// final dioProvider = Provider<Dio>((ref) {
-//   return Dio(
-//     BaseOptions(baseUrl: 'https://api.themoviedb.org/3/'),
-//   );
-// });
-
-final navJsonProvider = Provider<Dio>((ref) {
+final apiJsonProvider = Provider<Dio>((ref) {
   return Dio(
     BaseOptions(
         baseUrl:
             'https://raw.githubusercontent.com/shagene/cpu_design_system/main/assets/'),
   );
 });
-
-// final navJsonProvider = Provider<dynamic>((ref) {
-//   return rootBundle.loadString('navigation.json');
-// });
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
